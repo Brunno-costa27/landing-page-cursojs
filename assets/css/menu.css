@@ -1,0 +1,117 @@
+/* A classe menu tem um fundo branco e uma position fixed, que 
+deixará o elemento fixado mesmo após a rolagem da página. As propriedades
+top: 0, left: 0 definem as distâncias entre as bordas do elemento e as bordas
+ da janela do navegador. O menu também tem uma borda de cor cinza na parte debaixo 
+ do menu.
+ */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 0.1rem solid var(--light-gray-color);
+}
+  
+/* menu-content: Usando o display: flex para flexionar os elementos do bloco.
+justify-content: space-between serve para alinhar os elementos um ao lado do outro.
+align-items: center serve para alinhar os elementos no meio página horizontalmente.
+padding-top e padding-bottom serve para zerar o espaçamento em cima e embaixo. */
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* font-size: 2.3rem determina o tamanho da fonte do elemento. A propriedade
+color determina a cor do texto do elemento. */
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+    font-weight: 1000 !important;
+}
+
+/* O color: inherit herda as propriedades do elemento pai. */
+.menu h1 a {
+    color: inherit;
+}
+
+/* list-style: none retira o estilo da lista. display: flex deixa os elementos
+da página flexivéis. */
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+/* Aqui temos o display: block define elementos como blocos retangulares
+ que começam em uma nova linha e ocupam toda a largura disponível do contêiner pai.
+ padding: 2rem para dar um espaçamento entre os elementos. font-size: 1.8rem. 
+ Uma cor do texto azul escuro com a propriedade color. O position: relative serve
+ para manter a posição normal ocupado pelo elemento, mesmo após o posicionamento. */
+.menu ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+
+/* Criado um efeito para minha lista.
+.menu ul li a::after: Isso seleciona o pseudo-elemento ::after de âncoras
+(<a>) dentro de elementos <li> em uma lista não ordenada (<ul>) que fazem parte
+de um elemento com a classe .menu.
+
+content: " ";: Isso define o conteúdo do pseudo-elemento como um espaço
+em branco.
+
+position: absolute;: Isso posiciona o pseudo-elemento de forma absoluta
+em relação ao elemento pai (âncora).
+
+bottom: 1rem;: Isso define a distância entre o pseudo-elemento e a 
+parte inferior da âncora.
+
+left: 50%;: Isso define a posição horizontal do pseudo-elemento 
+em 50% da largura da âncora.
+
+width: 0;: Inicialmente, a largura do pseudo-elemento é definida
+como zero, o que significa que não é visível.
+
+height: 0.2rem;: Define a altura do pseudo-elemento.
+
+background: crimson;: Define a cor de fundo do pseudo-elemento
+ como vermelho escuro.
+
+transition: all 300ms ease-in-out;: Adiciona uma transição suave 
+de 300 milissegundos ao pseudo-elemento para que a animação 
+seja mais suave, usando a função de temporização "ease-in-out". */
+.menu ul li a::after {
+content: '';
+position: absolute;
+bottom: 1rem;
+left: 50%;
+width: 0;
+height: 0.2rem;
+background: var(--secondary-color); 
+transition: all 300ms ease-in-out;
+}
+
+
+/* .menu ul li a:hover::after: Isso seleciona o pseudo-elemento
+::after de âncoras dentro de elementos <li> em uma lista não 
+ordenada que fazem parte de um elemento com a classe 
+.menu, quando o mouse está sobre elas.
+
+width: 50%;: Isso aumenta a largura do pseudo-elemento para 50%
+quando o mouse está sobre a âncora.
+
+left: 25%;: Isso ajusta a posição horizontal do pseudo-elemento
+para 25% da largura da âncora, criando a animação de sublinhado
+quando o mouse passa sobre o link.*/
+.menu ul li a:hover::after {
+width: 50%;
+left: 25%;
+}

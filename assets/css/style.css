@@ -1,0 +1,518 @@
+
+
+/* Zera a margin e o espaçamento */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tamanho da fonte do doc html*/
+html {
+    font-size: 62.5%
+}
+
+/* Define a fonte, o tamanho da fonte e
+ a cor dos elementos textos */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* Tipo de fonte para meus títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Monserrat', sans-serif;
+}
+  
+/* Tamanho da fonte para cada título */
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+  
+h2 {
+    font-size: 5.5rem;
+}
+  
+h3 {
+    font-size: 5rem;
+}
+  
+h4 {
+    font-size: 4.5rem;
+}
+  
+h5 {
+    font-size: 4rem;
+}
+  
+h6 {
+    font-size: 3.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Clase main-bg: Define uma imagem de fundo. Define o tamanho
+da imagem com o valor cover para que a imagem possa cobrir 
+completamente todo elemento. */
+.main-bg {
+    background-image: url('../img/main-bg.svg');
+    background-size: cover;
+    background-position: center center;
+    color: var(--white-color);
+}
+
+/* Clase white-bg: Define a cor de fundo. */
+.white-bg {
+    background: var(--white-color);
+}
+ 
+/* Clase main-content: Define a largura máxima de 1200px.
+ A margin é 0 auto, isso quer dizer que no topo e abaixo
+ será 0, e nas laterais será auto. O espaçamento interno de 3rem.*/
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+/* Define a altura mínima do elemento. O 100vh significa que
+o elemento terá pelo menos a altura igual à altura total da 
+janela de visualização. 100vh representa a porcentagem da 
+altura da viewport. */
+.section {
+    min-height: 100vh;
+  }
+
+/* A classe menu tem um fundo branco e uma position fixed, que 
+deixará o elemento fixado mesmo após a rolagem da página. As propriedades
+top: 0, left: 0 definem as distâncias entre as bordas do elemento e as bordas
+ da janela do navegador. O menu também tem uma borda de cor cinza na parte debaixo 
+ do menu.
+ */
+.menu { 
+    background: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--light-gray-color);
+}
+
+/* menu-content: Usando o display: flex para flexionar os elementos do bloco.
+justify-content: space-between serve para alinhar os elementos um ao lado do outro.
+align-items: center serve para alinhar os elementos no meio página horizontalmente.
+padding-top e padding-bottom serve para zerar o espaçamento em cima e embaixo. */
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* font-size: 2.3rem determina o tamanho da fonte do elemento. A propriedade
+color determina a cor do texto do elemento. */
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+}
+
+/* O color: inherit herda as propriedades do elemento pai. */
+.menu h1 a {
+    color: inherit;
+}
+
+/* list-style: none retira o estilo da lista. display: flex deixa os elementos
+da página flexivéis. */
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+
+/* Aqui temos o display: block define elementos como blocos retangulares
+ que começam em uma nova linha e ocupam toda a largura disponível do contêiner pai.
+ padding: 2rem para dar um espaçamento entre os elementos. font-size: 1.8rem. 
+ Uma cor do texto azul escuro com a propriedade color. O position: relative serve
+ para manter a posição normal ocupado pelo elemento, mesmo após o posicionamento. */
+.menu ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+/* Criado um efeito para minha lista.
+.menu ul li a::after: Isso seleciona o pseudo-elemento ::after de âncoras
+(<a>) dentro de elementos <li> em uma lista não ordenada (<ul>) que fazem parte
+de um elemento com a classe .menu.
+
+content: " ";: Isso define o conteúdo do pseudo-elemento como um espaço
+em branco.
+
+position: absolute;: Isso posiciona o pseudo-elemento de forma absoluta
+em relação ao elemento pai (âncora).
+
+bottom: 1rem;: Isso define a distância entre o pseudo-elemento e a 
+parte inferior da âncora.
+
+left: 50%;: Isso define a posição horizontal do pseudo-elemento 
+em 50% da largura da âncora.
+
+width: 0;: Inicialmente, a largura do pseudo-elemento é definida
+como zero, o que significa que não é visível.
+
+height: 0.2rem;: Define a altura do pseudo-elemento.
+
+background: crimson;: Define a cor de fundo do pseudo-elemento
+ como vermelho escuro.
+
+transition: all 300ms ease-in-out;: Adiciona uma transição suave 
+de 300 milissegundos ao pseudo-elemento para que a animação 
+seja mais suave, usando a função de temporização "ease-in-out". */
+.menu ul li a::after {
+    content: " ";
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: crimson;
+    transition: all 300ms ease-in-out;
+}
+
+/* .menu ul li a:hover::after: Isso seleciona o pseudo-elemento
+::after de âncoras dentro de elementos <li> em uma lista não 
+ordenada que fazem parte de um elemento com a classe 
+.menu, quando o mouse está sobre elas.
+
+width: 50%;: Isso aumenta a largura do pseudo-elemento para 50%
+quando o mouse está sobre a âncora.
+
+left: 25%;: Isso ajusta a posição horizontal do pseudo-elemento
+para 25% da largura da âncora, criando a animação de sublinhado
+quando o mouse passa sobre o link.*/
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
+}
+
+
+/* 
+position: relative; Define a posição dos elementos com essa
+classe como "relativa". Isso significa que eles serão posicionados
+em relação à posição normal dentro do fluxo do documento,
+permitindo o uso de propriedades como top, left, right e bottom para 
+ajustar o posicionamento.
+__________________________________________________________________
+
+top: -8rem;: Move os elementos para cima (-8rem) em relação à
+sua posição normal. Isso desloca os elementos para cima da posição
+onde eles estariam se top fosse definido como 0.
+__________________________________________________________________
+display: grid;: Define que os elementos com essa classe serão exibidos
+como um contêiner de grade. Isso permite que você crie layouts de grade
+para organizar os elementos filhos.
+__________________________________________________________________
+grid-template-columns: 1fr 1.5fr;: Define a estrutura de colunas da grade.
+Neste caso, há duas colunas: a primeira tem uma largura de 1fr (fração igual) e a segunda tem uma largura de 1.5fr. Isso significa que a segunda coluna será 1,5 vezes mais larga que a primeira.
+__________________________________________________________________
+gap: var(--gap);: Define o espaçamento entre as células da grade. 
+O valor var(--gap) indica que ele está usando uma variável 
+CSS chamada --gap, que provavelmente é definida em algum lugar
+no CSS com um valor específico de espaçamento.
+__________________________________________________________________
+min-height: 100vh;: Define a altura mínima dos elementos com essa
+classe como 100vh, que é equivalente a 100% da altura da janela do
+navegador. Isso garante que o conteúdo ocupará pelo menos toda a
+altura da janela do navegador, tornando-o "responsivo" em relação
+à altura da janela.
+*/
+.intro-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+
+
+/*
+.intro-text-content, .intro-img: Isso seletor CSS seleciona todos
+os elementos com a classe .intro-text-content e todos os elementos
+com a classe .intro-img. Isso permite que as regras CSS sejam aplicadas
+a esses elementos específicos.
+________________________________________________________________________
+display: flex;: A propriedade display com o valor flex é usada para
+transformar os elementos em flex containers. Isso significa que os 
+elementos dentro desses contêineres podem ser posicionados e alinhados
+de acordo com as regras do Flexbox.
+________________________________________________________________________
+flex-flow: column wrap;: A propriedade flex-flow é usada para definir
+a direção do fluxo flexível. Neste caso, column indica que os elementos
+dentro dos contêineres serão empilhados verticalmente em uma coluna, 
+um abaixo do outro. A opção wrap indica que os elementos que não cabem
+em uma única coluna devem ser movidos para uma nova coluna
+(que é o comportamento padrão de um contêiner flexível).
+________________________________________________________________________
+justify-content: center;: A propriedade justify-content é usada para 
+alinhar verticalmente os elementos dentro do contêiner flexível.
+O valor center centraliza verticalmente os elementos dentro do 
+contêiner, fazendo com que eles fiquem no meio da coluna.
+
+*/
+.intro-text-content, .intro-img {
+    display: flex;
+    flex-flow: column wrap; 
+    justify-content: center;
+}
+
+
+.intro-text-content h2 {
+    font-size: 6rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.intro-img img, .intro-img svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.top3-content {
+    max-width: 64rem;
+    display: flex;
+    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.grid-one-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.grid-main-heading {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    padding-bottom: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+    transform: rotate(5deg);
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.contact-form {
+    grid-column: span 2;
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-grid legend {
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    flex: 1 1 320px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group input, .form-group textarea {
+    border: none;
+    background: var(--white-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 10px 2px var(--secondary-color);
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white-color);
+    background: none;
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group button:hover {
+    background: var(--white-color);
+    color: var(--primary-color);
+  }
+  
+  .form-group ::placeholder {
+    color: var(--light-gray-color);
+  }
+  
+  .footer {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+  
+  .footer a {
+    color: var(--primary-color);
+  }
+  
+  .heart {
+    color: var(--secondary-color);
+  }
+  
+  .footer p {
+    margin: 0;
+    padding: 3rem;
+  }
+
+.close-menu {
+    display: none;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color);
+    transform: rotate(-90deg);
+    border: 0.1rem solid var(--primary-color); 
+}
+
+
+@media (max-width: 800px){
+    .intro-content, .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .gallery-img img {
+        width: 100%;
+    }
+
+    .grid-one-content {
+        display: block;
+    }
+
+    .menu {
+        bottom: 0;
+        text-align: center;
+    }
+
+    .menu-content, .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .close-menu-label::after {
+        content: "☰";
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~.menu {
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: "×";
+    }
+}
+
+.menu-spacing {
+    display: none;
+}

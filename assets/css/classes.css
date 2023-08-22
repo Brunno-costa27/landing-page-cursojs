@@ -1,0 +1,51 @@
+/* Clase main-bg: Define uma imagem de fundo. Define o tamanho
+da imagem com o valor cover para que a imagem possa cobrir 
+completamente todo elemento. */
+.main-bg {
+    background-image: url('../img/main-bg.svg');
+    background-size: cover;
+    background-position: center center;
+    color: var(--white-color);
+}
+
+/* Clase white-bg: Define a cor de fundo. */
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+/* Clase main-content: Define a largura máxima de 1200px.
+ A margin é 0 auto, isso quer dizer que no topo e abaixo
+ será 0, e nas laterais será auto. O espaçamento interno de 3rem.*/
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 10rem var(--gap);
+}
+
+/* Define a altura mínima do elemento. O 100vh significa que
+o elemento terá pelo menos a altura igual à altura total da 
+janela de visualização. 100vh representa a porcentagem da 
+altura da viewport. */
+.section {
+    min-height: 100vh;
+}
+
+/* Define uma altura de 65px para a classe */
+.menu-spacing{
+    height: 65px;
+}
+
+/* width: 100% define a largura desses elementos como 100%
+Já o flex: 1 1 100%. Ela define três propriedades.
+    -> flex-grow: 1 - Isso permite que os elementos cresçam e 
+    ocupem todo o espaço do container. O valor significa crescer
+    proporcionalmente.
+    -> flex-shrink: 1 - Isso permite que os elementos encolham 
+    se houver falta de espaço dentro do contêiner flexível.
+    O valor 1 significa que eles podem encolher proporcionalmente.  
+    -> flex-basis: 100%; Isso define o tamanho inicial dos elementos como 100% */
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
